@@ -1,38 +1,174 @@
 .App {
-  text-align: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-task {
+    width: 350px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+p {
+    margin: 20px 0;
+    font-size: 40px;
+    font-weight: 700;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tasks {
+    display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+p,
+li {
+    width: 40vw;
+    padding: 0 25px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.add {
+    margin: 300px 0 0;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+img:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Style général pour l'input */
+input[type="text"],
+input[type="submit"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Style quand l'input est en focus */
+input[type="text"]:focus {
+    border-color: #000;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Style pour un input de type submit */
+input[type="submit"], button {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Input disabled */
+input[disabled] {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+
+@media screen and (max-width: 600px) {
+    ul {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    p,
+    li {
+        width: 45%;
+    }
+
+    .modal-content {
+        width: 300px;
+        height: 400px;
+    }
+
 }
